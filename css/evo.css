@@ -25,6 +25,8 @@
     position: absolute;
     left: 50%;
     top: 61.5%;
+    font-size: 14px;
+    font-weight: 600;
     background-color: var(--background-medium);
     border-color: var(--background-lower);
     border-width: 2px;
@@ -84,7 +86,6 @@ body::before {
 * {
     font-family: 'JetBrains Mono', monospace;
     color: var(--foreground);
-    font-size: medium;
     outline: none;
 }
 
@@ -229,6 +230,10 @@ input:focus {
 
 #powermenu {
     left: 8px;
+}
+
+#powermenu p {
+    line-height: 24px;
 }
 
 #session-list {
