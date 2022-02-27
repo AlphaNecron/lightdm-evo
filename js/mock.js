@@ -113,9 +113,9 @@ if (!('lightdm' in window)) {
     lightdm.start_session_sync = function (session) {
         _lightdm_mock_check_argument_length(arguments, 1);
         if (!lightdm.is_authenticated)
-            show_error("The system is not authenticated")
+            show_error("The system is not authenticated");
         else if (user !== lightdm.authentication_user)
-            show_error("This user is not authenticated")
+            show_error("This user is not authenticated");
         else if (!session) show_error("Invalid session!");
         else show_message("Logged in successfully!");
         document.location.reload(true);
@@ -135,7 +135,7 @@ const _lightdm_mock_check_argument_length = (args, length) => {
     if (args.length != length) {
         show_prompt("Incorrect number of arguments in function call");
     }
-}
+};
 
 const _lightdm_mock_get_user = username => {
     let usr = null, i;
@@ -146,4 +146,4 @@ const _lightdm_mock_get_user = username => {
         }
     }
     return usr;
-}
+};

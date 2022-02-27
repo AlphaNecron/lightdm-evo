@@ -14,7 +14,7 @@ function update_time() {
 }
 
 this.addEventListener("load", () => {
-    $("dt").addEventListener("click", e => {
+    $("dt").addEventListener("click", () => {
         timeWidgetMode = timeWidgetMode === 0 ? 1 : 0;
         update_time();
     });
@@ -42,7 +42,7 @@ function toast(title, isErr) {
     const toast = document.createElement("div");
     if (isErr) toast.className = "err";
     toast.innerHTML = title;
-    toast.addEventListener("click", () => $("toast-container").removeChild(toast))
+    toast.addEventListener("click", () => $("toast-container").removeChild(toast));
     $("toast-container").appendChild(toast);
     setTimeout(() => {
         if ($("toast-container").contains(toast)) {
@@ -54,9 +54,9 @@ function toast(title, isErr) {
 
 function authentication_complete() {
     if (lightdm.is_authenticated)
-        lightdm.start_session_sync(currentSession)
+        lightdm.start_session_sync(currentSession);
     else {
-        if (lightdm._username){
+        if (lightdm._username) {
             lightdm.cancel_authentication();
         }
         if (currentUser) lightdm.start_authentication(currentUser.name);
@@ -105,7 +105,7 @@ function set_session(session) {
 
 function set_user(user) {
     currentUser = user;
-    if (lightdm._username){
+    if (lightdm._username) {
         lightdm.cancel_authentication();
     }
     if (user) lightdm.start_authentication(user.name);

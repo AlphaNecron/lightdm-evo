@@ -4,7 +4,7 @@
     --background-low: #1C1C1C;
     --foreground: #E8E3E3;
     --accent: #8DA3B9;
-    --background-lower: #222222;
+    --background-lower: #222;
     --red: #B66467;
 }
 
@@ -113,7 +113,7 @@ button:hover {
 
 input {
     font-size: medium;
-    padding: 0px 8px;
+    padding: 0 8px;
     margin-right: 4px;
     height: 28px;
     border: solid 2px var(--background-low);
