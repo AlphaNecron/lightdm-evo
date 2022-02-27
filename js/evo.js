@@ -28,7 +28,7 @@ this.addEventListener("load", () => {
     lightdm.users.forEach(usr => $("user-dropdown").appendChild(make_menu_item(`<img src="${usr.image}" class="sm-avatar"></img>${usr.display_name}`, () => set_user(usr))));
     lightdm.sessions.forEach(s => $("session-list").appendChild(make_menu_item(s.name, () => set_session(s))));
     $("hostname").innerText = lightdm.hostname;
-    set_user(lightdm.select_user);
+    set_user(lightdm.select_user || lightdm.users[0]);
 });
 
 function make_menu_item(inner, click) {
@@ -109,7 +109,7 @@ function set_user(user) {
         lightdm.cancel_authentication();
     }
     if (user) lightdm.start_authentication(user.name);
-    set_session(lightdm.sessions.find(s => s.key === currentUser.session) || currentSession || lightdm.default_session);
+    set_session(currentUser.session ? lightdm.sessions.find(s => s.key === currentUser.session) : currentSession || lightdm.default_session);
     $("avatar").src = user.image;
     $("name").textContent = user.display_name;
     $("password-box").focus();
