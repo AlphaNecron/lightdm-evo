@@ -18,6 +18,11 @@
 
 *:not(img) {
     border-radius: 4px;
+    font-family: 'JetBrains Mono', monospace;
+    font-weight: 600;
+    font-size: 14px;
+    color: var(--foreground);
+    outline: none;
 }
 
 .drop-container {
@@ -26,7 +31,6 @@
     left: 50%;
     top: 61.5%;
     font-size: 14px;
-    font-weight: 600;
     background-color: var(--background-medium);
     border-color: var(--background-lower);
     border-width: 2px;
@@ -83,12 +87,6 @@ body::before {
     -ms-user-select: none;
 }
 
-* {
-    font-family: 'JetBrains Mono', monospace;
-    color: var(--foreground);
-    outline: none;
-}
-
 *::selection {
     background-color: var(--accent);
     color: var(--background);
@@ -119,7 +117,6 @@ button:hover {
 }
 
 input {
-    font-size: medium;
     padding: 0 8px;
     margin-right: 4px;
     height: 28px;
@@ -133,7 +130,6 @@ input:focus {
 
 #name {
     font-size: x-large;
-    font-weight: bolder;
     display: inline-block;
 }
 
@@ -148,7 +144,6 @@ input:focus {
     align-items: flex-end;
     bottom: 0;
     width: 96%;
-    font-weight: bold;
     justify-content: space-between;
 }
 
@@ -214,7 +209,6 @@ input:focus {
 
 #toast-container > div {
     font-size: smaller;
-    font-weight: bold;
     width: fit-content;
     padding: 16px 32px;
     border: solid 2px var(--background-lower);
