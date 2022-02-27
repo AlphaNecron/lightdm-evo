@@ -24,7 +24,7 @@
     display: none;
     position: absolute;
     left: 50%;
-    top: 60%;
+    top: 61.5%;
     background-color: var(--background-medium);
     border-color: var(--background-lower);
     border-width: 2px;
@@ -108,7 +108,12 @@ button {
     min-width: 32px;
 }
 
-button:hover:not(:disabled) {
+#login-btn:hover:not(:disabled) {
+    background-color: var(--accent);
+    color: var(--background);
+}
+
+button:hover {
     color: var(--accent);
 }
 
@@ -202,7 +207,7 @@ input:focus {
 }
 
 #login-btn:disabled {
-    border-color: var(--background-lower);
+    border-color: var(--background-low);
     color: var(--grey)
 }
 

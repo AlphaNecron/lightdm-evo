@@ -7,7 +7,7 @@ if (!('lightdm' in window)) {
     lightdm.sessions = [
         {
             key: "bspwm",
-            name: "BSPWM",
+            name: "bspwm",
             comment: "no comment"
         },
         {
