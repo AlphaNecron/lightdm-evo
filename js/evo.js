@@ -86,11 +86,6 @@ function handle_power_operation(op) {
     }
 }
 
-function lock_login_button() {
-    $("login-btn").disabled = true;
-    setTimeout(unlock_login_button, 3000);
-}
-
 function unlock_login_button() {
     $("login-btn").disabled = false;
     clearTimeout(unlock_login_button);
@@ -99,7 +94,7 @@ function unlock_login_button() {
 function provide_secret() {
     password = $("password-box").value || null;
     if (password !== null) {
-        lock_login_button();
+        $("login-btn").disabled = true;
         lightdm.respond(password);
     }
 }
