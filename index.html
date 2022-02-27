@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/evo.css">
+    <title>Evo</title>
+    <script src="js/evo.js"></script>
+    <script src="js/mock.js"></script>
+</head>
+
+<body>
+    <div id="toast-container">
+    </div>
+    <div id="login-box" class="center">
+        <form id="content" action="javascript: provide_secret();">
+            <img id="avatar" class="unselectable"><img/>
+            <div>
+                <span><p id="name"></p><button class="ghost xl-font icon" id="usrDropBtn" type="button" dropdown="user-dropdown">
+                        &#xe92e;
+                    </button>
+                </span>
+            </div>
+            <div id="user-dropdown" class="drop-container image">
+            </div>
+            <div class="unselectable">
+                <input type="password" placeholder="Password" id="password-box"><button class="icon" type="submit">
+                    &#xe9cd;
+                </button>
+            </div>
+        </form>
+        <div class="drop-container bottom-drop" id="powermenu">
+        </div>
+        <div class="drop-container bottom-drop" id="session-list">
+        </div>
+        <div class="bottom">
+            <span>
+                <button class="ghost icon" id="powerDropBtn" dropdown="powermenu" style="font-size:x-small">
+                    &#xe9c0;
+                </button><p id="hostname"></p></span>
+            <span><p id="session"></p><button class="ghost icon" id="sessionDropBtn" dropdown="session-list">&#xe931;</button></span>
+            <button class="ghost" id="dt"></button>
+        </div>
+    </div>
+</body>
+
+</html>

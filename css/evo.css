@@ -1,0 +1,259 @@
+:root {
+    --background: #151515;
+    --background-medium: #181818;
+    --background-low: #1C1C1C;
+    --foreground: #E8E3E3;
+    --accent: #8DA3B9;
+    --background-lower: #222222;
+    --red: #B66467;
+}
+
+@font-face {
+    font-family: 'feather';
+    src: url(/static/feather.ttf);
+    font-style: normal;
+    font-display: block;
+}
+
+*:not(img) {
+    border-radius: 4px;
+}
+
+.drop-container {
+    display: none;
+    position: absolute;
+    left: 60%;
+    transform: translateY(-15%);
+    background-color: var(--background-medium);
+    border-color: var(--background-lower);
+    border-width: 2px;
+    border-style: solid;
+    min-width: 120px;
+    z-index: 100;
+    padding: 0;
+}
+
+.drop-container > div {
+    height: 32px;
+    line-height: 32px;
+    padding: 0 12px;
+    text-decoration: none;
+    z-index: 100;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    cursor: pointer;
+    display: block;
+    text-align: start;
+}
+
+.drop-container.image > div {
+    padding-left: 40px;
+}
+
+.drop-container > div:hover {
+    background-color: var(--background-low);
+}
+
+body {
+    overflow: hidden;
+}
+
+body::before {
+    content: "";
+    display: block;
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -10;
+    background-image: url(/static/wp.png);
+    background-size: cover;
+}
+
+.unselectable {
+    -webkit-touch-callout: none;
+    -khtml-user-select: none;
+    user-select: none;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+}
+
+* {
+    font-family: 'JetBrains Mono', monospace;
+    color: var(--foreground);
+    font-size: medium;
+}
+
+*::selection {
+    background-color: var(--accent);
+    color: var(--background);
+}
+
+#toast-container > div, #login-box, .ghost {
+    background-color: var(--background);
+}
+
+button, input {
+    background-color: var(--background-medium);
+    color: var(--foreground);
+}
+
+button {
+    border: solid 2px var(--accent);
+    height: 32px;
+    min-width: 32px;
+}
+
+button:hover {
+    color: var(--accent);
+}
+
+input {
+    outline: none;
+    font-size: medium;
+    padding: 0px 8px;
+    margin-right: 4px;
+    height: 28px;
+    border: solid 2px var(--background-low);
+    width: 240px;
+}
+
+input:focus {
+    border-color: var(--accent);
+}
+
+#name {
+    font-size: x-large;
+    font-weight: bolder;
+    display: inline-block;
+}
+
+.bottom * {
+    font-size: x-small;
+    font-weight: bolder;
+}
+
+.bottom {
+    position: fixed;
+    display: flex;
+    align-items: flex-end;
+    bottom: 0;
+    width: 96%;
+    font-weight: bold;
+    justify-content: space-between;
+}
+
+.bottom > span { display: inline-flex; }
+
+.bottom :first-child{
+    margin-left: -6px;
+    margin-bottom: 1px;
+}
+
+.icon {
+    font-family: 'feather';
+}
+
+#avatar {
+    border-radius: 50%;
+    pointer-events: none;
+    width: 128px;
+    height: 128px;
+}
+
+.sm-avatar {
+    pointer-events: none;
+    max-width: 32px;
+    max-height: 32px;
+    position: absolute;
+    left: 0;
+}
+
+.show {display:block;}
+
+.ghost {
+    border: none;
+}
+
+.xl-font {
+    font-size: large;
+}
+
+@media screen and (max-height: 799px) {
+    .center {
+        transform: translate(-50%, 25%);
+    }
+}
+
+@media screen and (min-height: 800px) {
+    .center {
+        transform: translate(-50%, 40%);
+    }
+}
+
+.center {
+    position: absolute;
+    left: 50%;
+    right: 50%;
+}
+
+#content {
+    text-align: center;
+    margin: 10%;
+}
+
+#toast-container {
+    right: 4px;
+    z-index: 1000;
+    position: absolute;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+#toast-container > :not(:last-child) {
+    margin-bottom: 4px;
+}
+
+#toast-container > div {
+    font-size: smaller;
+    font-weight: bold;
+    width: fit-content;
+    padding: 16px 32px;
+    border: solid 2px var(--background-lower);
+}
+
+#password-box {
+    transform: translateY(-2px);
+}
+
+#toast-container > div.err {
+    border-color: var(--red);
+}
+
+#powermenu {
+    left: 8px;
+    bottom: 16px;
+}
+
+#session-list {
+    left: 40%;
+    bottom: 24px;
+}
+
+.bottom-drop {
+    position: absolute;
+    width: fit-content;
+}
+
+#login-box {
+    width: 75vh;
+    padding: 16px;
+    min-height: 400px;
+    min-width: 600px;
+    border: solid 2px var(--background-lower);
+    height: 50vh;
+}
