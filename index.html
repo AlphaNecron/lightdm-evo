@@ -18,7 +18,7 @@
         <form id="content" action="javascript: provide_secret();">
             <img id="avatar" class="unselectable"><img/>
             <div>
-                <span><p id="name"></p><button class="ghost xl-font icon" id="usrDropBtn" type="button" dropdown="user-dropdown">
+                <span><p id="name"></p><button class="ghost xl-font icon" type="button" dropdown="user-dropdown">
                         &#xe92e;
                     </button>
                 </span>
@@ -26,7 +26,7 @@
             <div id="user-dropdown" class="drop-container image">
             </div>
             <div class="unselectable iflex">
-                <input type="password" placeholder="Password" id="password-box"><button class="icon" type="submit">
+                <input type="password" placeholder="Password" id="password-box"><button class="icon" id="login-btn" type="submit">
                     &#xe9cd;
                 </button>
             </div>
@@ -37,10 +37,10 @@
         </div>
         <div class="bottom">
             <span>
-                <button class="ghost icon" id="powerDropBtn" dropdown="powermenu" style="font-size:x-small">
+                <button class="ghost icon" dropdown="powermenu" style="font-size:x-small">
                     &#xe9c0;
                 </button><p id="hostname"></p></span>
-            <span><p id="session"></p><button class="ghost icon" id="sessionDropBtn" dropdown="session-list">&#xe931;</button></span>
+            <span><p id="session"></p><button class="ghost icon" dropdown="session-list">&#xe931;</button></span>
             <button class="ghost" id="dt"></button>
         </div>
     </div>

@@ -5,6 +5,7 @@
     --foreground: #E8E3E3;
     --accent: #8DA3B9;
     --background-lower: #222;
+    --grey: #636363;
     --red: #B66467;
 }
 
@@ -107,7 +108,7 @@ button {
     min-width: 32px;
 }
 
-button:hover {
+button:hover:not(:disabled) {
     color: var(--accent);
 }
 
@@ -198,6 +199,11 @@ input:focus {
 
 #toast-container > :not(:last-child) {
     margin-bottom: 4px;
+}
+
+#login-btn:disabled {
+    border-color: var(--background-lower);
+    color: var(--grey)
 }
 
 #toast-container > div {
