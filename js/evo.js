@@ -45,15 +45,13 @@ function toast(title, isErr) {
     toast.addEventListener("click", () => $("toast-container").removeChild(toast));
     $("toast-container").appendChild(toast);
     setTimeout(() => {
-        if ($("toast-container").contains(toast)) {
             [1, 0.75, 0.5, 0.25].forEach(x => setTimeout(() => toast.style.opacity = x, 25 / x));
-            setTimeout(() => $("toast-container").removeChild(toast), 100);
-        }
+            setTimeout(() => { if ($("toast-container").contains(toast)) $("toast-container").removeChild(toast) }, 100);
     }, 2000);
 }
 
 function authentication_complete() {
-    unlock_login_button();
+    $("login-btn").disabled = false;
     if (lightdm.is_authenticated)
         lightdm.start_session_sync(currentSession);
     else {
@@ -84,11 +82,6 @@ function handle_power_operation(op) {
     if (lightdm[`can_${op}`]) {
         lightdm[op]();
     }
-}
-
-function unlock_login_button() {
-    $("login-btn").disabled = false;
-    clearTimeout(unlock_login_button);
 }
 
 function provide_secret() {
