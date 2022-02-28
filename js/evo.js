@@ -24,7 +24,7 @@ this.addEventListener("load", () => {
     });
     update_time();
     setInterval(() => update_time(), 1000);
-    Object.entries(powerOperations).filter(([o, _]) => lightdm[`can_${o.toLowerCase()}`]).forEach(([o, i]) => $("powermenu").appendChild(make_menu_item(`<p class="icon" style="display: inline">${i}</p> ${o}`, () => handle_power_operation(o.toLowerCase()))));
+    Object.entries(powerOperations).filter(([o, _]) => lightdm[`can_${o.toLowerCase()}`]).forEach(([o, i]) => $("powermenu").appendChild(make_menu_item(`<p class="icon" style="display: inline">${i}</p> ${o}`, () => lightdm[o.toLowerCase()]())));
     lightdm.users.forEach(usr => $("user-dropdown").appendChild(make_menu_item(`<img src="${usr.image}" class="sm-avatar"></img>${usr.display_name}`, () => set_user(usr))));
     lightdm.sessions.forEach(s => $("session-list").appendChild(make_menu_item(s.name, () => set_session(s))));
     $("hostname").innerText = lightdm.hostname;
@@ -76,12 +76,6 @@ function show_prompt(text, type) {
 
 function show_message(msg) {
     toast(msg, false);
-}
-
-function handle_power_operation(op) {
-    if (lightdm[`can_${op}`]) {
-        lightdm[op]();
-    }
 }
 
 function provide_secret() {
