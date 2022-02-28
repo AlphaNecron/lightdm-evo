@@ -46,7 +46,7 @@ function toast(title, isErr) {
     $("toast-container").appendChild(toast);
     setTimeout(() => {
             [1, 0.75, 0.5, 0.25].forEach(x => setTimeout(() => toast.style.opacity = x, 25 / x));
-            setTimeout(() => { if ($("toast-container").contains(toast)) $("toast-container").removeChild(toast) }, 100);
+            setTimeout(() => { if ($("toast-container").contains(toast)) $("toast-container").removeChild(toast) }, 125);
     }, 2000);
 }
 
