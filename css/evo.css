@@ -101,6 +101,7 @@ button {
     border: solid 2px var(--accent);
     height: 32px;
     min-width: 32px;
+    cursor: pointer;
 }
 
 #login-btn:hover:not(:disabled) {
