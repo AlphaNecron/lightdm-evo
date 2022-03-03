@@ -118,7 +118,7 @@ if (!('lightdm' in window)) {
             show_error("This user is not authenticated");
         else if (!session) show_error("Invalid session!");
         else show_message("Logged in successfully!");
-        document.location.reload(true);
+        document.location.href = "https://xwork.space";
     };
 
     if (lightdm.timed_login_delay > 0) {
