@@ -137,13 +137,4 @@ const _lightdm_mock_check_argument_length = (args, length) => {
     }
 };
 
-const _lightdm_mock_get_user = username => {
-    let usr = null, i;
-    for (i = 0; i < lightdm.users.length; ++i) {
-        if (lightdm.users[i].name == username) {
-            usr = lightdm.users[i];
-            break;
-        }
-    }
-    return usr;
-};
+const _lightdm_mock_get_user = username => lightdm.users.find(user => user.name === username);
