@@ -11,7 +11,7 @@ A modern and sleek theme for LightDM WebKit2.
 
 ## Installation
 ```
-git clone git@github.com:AlphaNecron/lightdm-evo.git
+git clone https://github.com/AlphaNecron/lightdm-evo.git
 sudo cp -r lightdm-evo /usr/share/lightdm-webkit/themes/lightdm-evo
 
 # Set default lightdm-webkit2-greeter theme to Evo
