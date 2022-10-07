@@ -1,5 +1,8 @@
 # Evo
 
+> **Warning**
+`evo` is reported to be broken on `webkit2gtk > 2.36`, please hold the package.
+
 Inspired by `lightdm-gab-gradient` and `Aether`.
 
 A modern and sleek theme for LightDM WebKit2.
